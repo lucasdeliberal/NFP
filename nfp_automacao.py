@@ -1,5 +1,5 @@
 import pyautogui
-import pyperclip35250614282227000343650010000021791970611123
+import pyperclip
 from openpyxl import load_workbook
 import time
 
@@ -15,7 +15,7 @@ y_botao_salvar = 575  # Coordenada Y do botão "Salvar Nota"
 # === TIMER INICIAL ===
 print("O script começará em 15 segundos. Prepare a tela em modo 'tela cheia'...")
 time.sleep(15)
-35250614282227000343650010000020821383610324
+
 # === 1. Carregar planilha ===
 wb = load_workbook(caminho_excel)
 planilha = wb.active
@@ -23,7 +23,7 @@ planilha = wb.active
 linha = linha_inicial
 
 while True:
-    # === 2. Ler a próxima chave ===35250610566772000149590012823710692915567000
+    # === 2. Ler a próxima chave ===
     celula = f"{coluna_chaves}{linha}"
     chave = str(planilha[celula].value)
 
