@@ -1,12 +1,13 @@
 import pyautogui
 import pyperclip
 from openpyxl import load_workbook
+from openpyxl.styles import PatternFill
 import time
 
 # === CONFIGURAÇÕES ===
 caminho_excel = r"C:\Users\ldeliberal\Desktop\NFP_SCRIPT\01DigitacaoExterna.xlsx"
 coluna_chaves = 'A'
-linha_inicial = 3335
+linha_inicial = 2
 x_campo_chave = 788  # Coordenada X do campo "Chave-de-acesso"
 y_campo_chave = 506  # Coordenada Y do campo "Chave-de-acesso"
 x_botao_salvar = 893  # Coordenada X do botão "Salvar Nota"
@@ -15,6 +16,9 @@ y_botao_salvar = 575  # Coordenada Y do botão "Salvar Nota"
 # === TIMER INICIAL ===
 print("O script começará em 15 segundos. Prepare a tela em modo 'tela cheia'...")
 time.sleep(15)
+
+# === Estilo para pintar célula de verde ===
+fill_verde = PatternFill(start_color="C6EFCE", end_color="C6EFCE", fill_type="solid")  # Verde claro
 
 # === 1. Carregar planilha ===
 wb = load_workbook(caminho_excel)
@@ -52,6 +56,10 @@ while True:
     pyautogui.click(x=x_botao_salvar, y=y_botao_salvar)
     print("Botão 'Salvar Nota' clicado.")
 
-    # === 8. Esperar 7 segundos antes da próxima ===
+    # === 8. Marcar a célula como processada (verde) e salvar ===
+    planilha[celula].fill = fill_verde
+    wb.save(caminho_excel)
+
+    # === 9. Esperar 7 segundos antes da próxima ===
     time.sleep(5)
     linha += 1
