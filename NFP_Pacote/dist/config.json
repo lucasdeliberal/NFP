@@ -1,0 +1,12 @@
+{
+  "nome_planilha": "01DigitacaoExterna.xlsx",
+  "coluna_chave": "A",
+  "linha_inicial": 12,
+  "x_campo_chave": 788,
+  "y_campo_chave": 506,
+  "x_botao_salvar": 893,
+  "y_botao_salvar": 575,
+  "imagem_chave": "img/chave_acesso.png",
+  "tempo_espera_antes_inicio": 15,
+  "tempo_espera_entre_chaves": 5
+}
